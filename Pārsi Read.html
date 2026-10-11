@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pārsi Read</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=Vazirmatn:wght@400;700&display=swap">
+<style>
+:root{--bg:#f6efe2;--card:#fffaf0;--ink:#1c2340;--muted:#6f6a5e;--turq:#1596a3;--deep:#0b5d6b;--saf:#e9a526;--ind:#1c2340;--rose:#c8553d;--line:#e2d6bd;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1428;--card:#18203a;--ink:#f3ead7;--muted:#a9a38f;--ind:#f3ead7;--line:#2c365a}}
+:root[data-theme="dark"]{--bg:#0f1428;--card:#18203a;--ink:#f3ead7;--muted:#a9a38f;--ind:#f3ead7;--line:#2c365a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+h1,h2,.logo{font-family:Fraunces,Georgia,serif}
+.wrap{max-width:680px;margin:0 auto;padding:0 1rem 2rem}
+.tab{position:absolute;opacity:0;pointer-events:none}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;padding:1rem 0}
+.logo{font-weight:700;font-size:1.35rem;margin-inline-end:auto}
+.logo b{color:var(--turq)}
+nav{display:flex;flex-wrap:wrap;gap:.2rem}
+nav label{padding:.35rem .8rem;border-radius:999px;cursor:pointer;font-size:.92rem;color:var(--muted)}
+nav .soon{opacity:.45;cursor:default}
+#p-home:checked ~ .wrap [for=p-home],#p-read:checked ~ .wrap [for=p-read],#p-about:checked ~ .wrap [for=p-about]{}
+#p-home:checked ~ .wrap nav [for=p-home],#p-read:checked ~ .wrap nav [for=p-read],#p-about:checked ~ .wrap nav [for=p-about]{background:var(--deep);color:#fff8e6}
+.band{height:14px;margin:0 -1rem;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M14 1 L19 7 L14 13 L9 7Z' fill='%231596a3'/%3E%3Cpath d='M0 7 L4 3 L4 11Z M28 7 L24 3 L24 11Z' fill='%23e9a526'/%3E%3C/svg%3E") repeat-x}
+.page{display:none;padding-top:1.5rem}
+#p-home:checked ~ .wrap #home,#p-read:checked ~ .wrap #read,#p-about:checked ~ .wrap #about{display:block}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center}
+.hero-text{flex:1 1 260px}
+h1{font-size:2.4rem;line-height:1.1;margin:0 0 .6rem}
+h1 em{color:var(--rose)}
+.hero-text p{color:var(--muted);margin:0 0 1.2rem}
+.btn{display:inline-block;background:var(--rose);color:#fff;border:0;border-radius:12px;padding:.7rem 1.3rem;font-size:1rem;cursor:pointer;font-weight:600;box-shadow:0 3px 0 #8f3b2a}
+.arch{flex:0 1 220px;margin-inline:auto;aspect-ratio:3/4;width:220px;border-radius:110px 110px 12px 12px;background:var(--deep);position:relative;overflow:hidden;border:4px solid var(--saf);display:grid;place-items:center}
+.arch svg.pat{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.arch .word{position:relative;direction:rtl;font-family:Vazirmatn,sans-serif;font-weight:700;font-size:3.2rem;color:#fff3d1;text-align:center;line-height:1.3}
+.arch .word small{display:block;font-family:Fraunces,serif;font-style:italic;font-weight:500;font-size:.9rem;color:var(--saf)}
+h2{font-size:1.3rem;margin:2rem 0 .8rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem;cursor:pointer;display:block}
+.tile h3{margin:.3rem 0 .1rem;font-size:1rem}
+.tile p{margin:0;font-size:.85rem;color:var(--muted)}
+.tile.off{opacity:.55;border-style:dashed;cursor:default}
+.badge{font-size:.65rem;letter-spacing:.06em;font-weight:700;color:var(--turq)}
+.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.scenes figure{margin:0;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.scenes svg{display:block;width:100%;height:auto}
+.scenes figcaption{font-size:.75rem;padding:.4rem .5rem;color:var(--muted)}
+.note{font-size:.8rem;color:var(--muted);margin-top:.5rem}
+/* read */
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:1rem}
+.controls label.sw{padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--turq);cursor:pointer;font-size:.9rem;color:var(--turq)}
+#t-translit:checked ~ .controls [for=t-translit],#t-en:checked ~ .controls [for=t-en]{background:var(--turq);color:#fff}
+.controls .btn{margin-inline-start:auto;padding:.5rem 1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.art{background:var(--deep);position:relative;height:170px;display:grid;place-items:center}
+.art svg.pat{position:absolute;inset:0;width:100%;height:100%;opacity:.25}
+.art svg.pic{position:relative;height:140px;width:140px}
+.body{padding:1.2rem 1.3rem 1.4rem}
+.fa{direction:rtl;text-align:right;font-family:Vazirmatn,Tahoma,sans-serif;font-size:2.1rem;line-height:1.9;font-weight:400}
+.orn{display:block;margin:.4rem auto;width:90px;height:10px}
+.translit,.en{direction:ltr;text-align:left}
+.translit{color:var(--turq);font-style:italic;margin-top:.4rem}
+.en{margin-top:.4rem}
+#t-translit:not(:checked) ~ .card .translit,#t-en:not(:checked) ~ .card .en,.co:empty{display:none}
+.co{margin-top:.8rem;padding:.55rem .8rem;border-inline-start:3px solid var(--saf);background:rgba(233,165,38,.12);border-radius:0 10px 10px 0;font-size:.92rem;color:var(--muted)}
+.co b{color:var(--ink)}
+.co .cf{font-family:Vazirmatn,Tahoma,sans-serif;font-size:1.05rem;color:var(--ink)}
+.meta{margin-top:1rem;font-size:.75rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+/* svg fills */
+.t{fill:var(--turq)}.s{fill:var(--saf)}.r{fill:var(--rose)}.c{fill:#fff3d1}.d{fill:var(--deep)}
+.l{fill:none;stroke:#fff3d1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between}
+footer label{cursor:pointer}
+</style>
+</head>
+<body>
+<input class="tab" type="radio" name="page" id="p-home" checked>
+<input class="tab" type="radio" name="page" id="p-read">
+<input class="tab" type="radio" name="page" id="p-about">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<pattern id="star" width="40" height="40" patternUnits="userSpaceOnUse">
+<g fill="none" stroke="#e9a526" stroke-width="1.5"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="4"/></g></pattern>
+<symbol id="orn" viewBox="0 0 90 10"><path d="M0 5H34M56 5H90" stroke="#e9a526" stroke-width="1.5"/><path d="M45 0L50 5L45 10L40 5Z" fill="#c8553d"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+<header>
+  <div class="logo">Pārsi<b>Read</b></div>
+  <nav>
+    <label for="p-home">Home</label><label for="p-read">Read</label>
+    <label class="soon">Practice</label><label class="soon">Alphabet</label>
+    <label for="p-about">About</label>
+  </nav>
+</header>
+<div class="band"></div>
+
+<section class="page" id="home">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Learn Persian <em>by reading.</em></h1>
+      <p>One sentence at a time, with transliteration and translation you can hide when you're ready to go without them.</p>
+      <label for="p-read" class="btn">Start reading</label>
+    </div>
+    <div class="arch">
+      <svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#star)"/></svg>
+      <div class="word" lang="fa" dir="rtl">خواندن<small>khāndan · to read</small></div>
+    </div>
+  </div>
+
+  <h2>Explore</h2>
+  <div class="grid">
+    <label for="p-read" class="tile"><span class="badge">OPEN</span><h3>Read</h3><p>Random sentences, one at a time.</p></label>
+    <div class="tile off"><span class="badge">SOON</span><h3>Practice</h3><p>Put the words in order.</p></div>
+    <div class="tile off"><span class="badge">SOON</span><h3>Alphabet</h3><p>Letters and sounds.</p></div>
+    <div class="tile off"><span class="badge">SOON</span><h3>Vocabulary</h3><p>Words by topic.</p></div>
+  </div>
+
+  <h2>Glimpses of Iran</h2>
+  <div class="scenes">
+    <figure><svg viewBox="0 0 120 100"><rect width="120" height="100" fill="#1596a3"/><circle cx="92" cy="22" r="10" fill="#e9a526"/><path d="M20 80V55a22 22 0 0 1 44 0V80Z" fill="#0b5d6b"/><path d="M42 24v8" stroke="#fff3d1" stroke-width="2"/><rect x="14" y="48" width="5" height="32" fill="#fff3d1"/><rect x="68" y="58" width="30" height="22" fill="#fff3d1"/><path d="M0 80h120v20H0Z" fill="#e9a526"/></svg><figcaption>Isfahan domes</figcaption></figure>
+    <figure><svg viewBox="0 0 120 100"><rect width="120" height="100" fill="#c8553d"/><circle cx="30" cy="25" r="12" fill="#fff3d1"/><g fill="#f6efe2"><rect x="30" y="35" width="8" height="45"/><rect x="52" y="35" width="8" height="45"/><rect x="74" y="35" width="8" height="45"/><rect x="26" y="30" width="16" height="6"/><rect x="48" y="30" width="16" height="6"/><rect x="70" y="30" width="16" height="6"/></g><path d="M0 80h120v20H0Z" fill="#8f3b2a"/></svg><figcaption>Persepolis columns</figcaption></figure>
+    <figure><svg viewBox="0 0 120 100"><rect width="120" height="100" fill="#e9a526"/><circle cx="60" cy="20" r="10" fill="#fff3d1"/><g fill="#8a5a10"><rect x="20" y="40" width="22" height="42"/><rect x="64" y="30" width="26" height="52"/><path d="M20 40l11-12 11 12ZM64 30l13-14 13 14Z"/></g><g fill="#fff3d1"><rect x="28" y="48" width="6" height="10"/><rect x="72" y="40" width="6" height="10"/><rect x="72" y="58" width="6" height="10"/></g><path d="M0 82h120v18H0Z" fill="#c98a12"/></svg><figcaption>Yazd wind towers</figcaption></figure>
+  </div>
+  <p class="note">Artwork is drawn in code. For real photos, add your own image files and swap them in for these three tiles.</p>
+</section>
+
+<section class="page" id="read">
+  <input class="tab" type="checkbox" id="t-translit" checked>
+  <input class="tab" type="checkbox" id="t-en" checked>
+  <div class="controls">
+    <label class="sw" for="t-translit">Transliteration</label>
+    <label class="sw" for="t-en">Translation</label>
+    <button class="btn" id="next" type="button">New text</button>
+  </div>
+  <div class="card">
+    <div class="art"><svg class="pat" aria-hidden="true"><rect width="100%" height="100%" fill="url(#star)"/></svg><svg class="pic" id="pic" viewBox="0 0 120 120"></svg></div>
+    <div class="body">
+      <div class="fa" lang="fa" dir="rtl" id="fa"></div>
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <div class="translit" dir="ltr" id="tr"></div>
+      <div class="en" dir="ltr" id="en"></div>
+      <div class="en co" dir="ltr" id="co"></div>
+      <div class="meta" id="meta"></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="about">
+  <h1>About</h1>
+  <p>A small project for people learning to read Persian (Farsi). It starts with a reading tool and will grow into word-order practice, an alphabet guide and vocabulary lists.</p>
+  <p><strong>Contact:</strong> your-email@example.com</p>
+</section>
+
+<footer><label for="p-about">About</label><span>Made with care for learners</span><label for="p-about">Contact</label></footer>
+</div>
+
+<script>
+const art={
+tea:'<path class="c" d="M40 40h40l-6 52H46Z" opacity=".25"/><path class="r" d="M43 56h34l-4 36H47Z"/><path class="l" d="M40 40h40l-6 52H46Z"/><ellipse class="s" cx="60" cy="98" rx="30" ry="6"/><path class="l" d="M50 30c-5-6 5-10 0-16M66 30c-5-6 5-10 0-16"/>',
+name:'<circle class="r" cx="60" cy="48" r="16"/><circle class="s" cx="40" cy="62" r="14"/><circle class="s" cx="80" cy="62" r="14"/><circle class="r" cx="60" cy="74" r="14"/><circle class="c" cx="60" cy="62" r="9"/><path class="l" d="M60 88v24"/>',
+school:'<path class="s" d="M36 62a24 24 0 0 1 48 0Z"/><rect class="c" x="26" y="62" width="68" height="40"/><rect class="r" x="52" y="78" width="16" height="24"/><path class="l" d="M60 28v10"/><circle class="s" cx="60" cy="26" r="4"/>',
+book:'<path class="c" d="M60 40C48 32 32 32 18 38v56c14-6 30-6 42 2Z"/><path class="s" d="M60 40c12-8 28-8 42-2v56c-14-6-30-6-42 2Z"/><path class="l" d="M60 40v56M30 52c8-2 16-2 22 1M72 52c8-3 16-3 22-1"/>',
+sun:'<circle class="s" cx="60" cy="52" r="22"/><path class="l" d="M60 14v10M60 80v10M22 52h10M88 52h10M33 25l7 7M80 72l7 7M87 25l-7 7M40 72l-7 7"/><path class="r" d="M0 120V96q30-18 60 0t60 0v24Z" opacity=".9"/>',
+water:'<path class="c" d="M36 34h48l-6 70H42Z" opacity=".25"/><path class="t" d="M39 60q10-8 21 0t21 0l-4 44H43Z" style="fill:#4fc3d0"/><path class="l" d="M36 34h48l-6 70H42Z"/><path class="l" d="M50 80v12" opacity=".6"/>'
+};
+const sentences=[
+{k:"tea",level:"Beginner",topic:"Food",fa:"من هر صبح چای می\u200cنوشم.",tr:"man har sobh chāy mi-nusham.",co:{tr:"man har sobh chāy mi-khoram",fa:"من هر صبح چای می\u200cخورم"},en:"I drink tea every morning."},
+{k:"name",level:"Beginner",topic:"Introductions",fa:"اسم من سارا است.",tr:"esm-e man Sārā ast.",co:{tr:"esmam Sārāst",fa:"اسمم ساراست"},en:"My name is Sara."},
+{k:"school",level:"Beginner",topic:"Daily life",fa:"او به مدرسه می\u200cرود.",tr:"u be madrese mi-ravad.",co:{tr:"un mi-re madrese",fa:"اون می\u200cره مدرسه"},en:"He/she goes to school."},
+{k:"book",level:"Beginner",topic:"Daily life",fa:"ما امروز کتاب می\u200cخوانیم.",tr:"mā emruz ketāb mi-khānim.",co:{tr:"mā emruz ketāb mi-khunim",fa:"ما امروز کتاب می\u200cخونیم"},en:"We are reading a book today."},
+{k:"sun",level:"Beginner",topic:"Weather",fa:"هوا امروز خوب است.",tr:"havā emruz khub ast.",co:{tr:"havā emruz khube",fa:"هوا امروز خوبه"},en:"The weather is nice today."},
+{k:"water",level:"Beginner",topic:"Food",fa:"من آب می\u200cخواهم.",tr:"man āb mi-khāham.",co:{tr:"man āb mi-khām",fa:"من آب می\u200cخوام"},en:"I want water."}
+];
+let cur=-1;
+function show(){
+  let i;do{i=Math.floor(Math.random()*sentences.length)}while(i===cur);
+  cur=i;const s=sentences[i];
+  document.getElementById('pic').innerHTML=art[s.k];
+  document.getElementById('fa').textContent=s.fa;
+  document.getElementById('tr').textContent=s.tr;
+  document.getElementById('en').textContent=s.en;
+  const co=document.getElementById('co');
+  co.innerHTML='';
+  if(s.co){const b=document.createElement('b');b.textContent='Colloquial: ';const t=document.createElement('span');t.textContent=s.co.tr+' ';const f=document.createElement('bdi');f.className='cf';f.lang='fa';f.dir='rtl';f.textContent='('+s.co.fa+')';co.append(b,t,f);}
+  document.getElementById('meta').textContent=s.level+" · "+s.topic;
+}
+document.getElementById('next').addEventListener('click',show);
+show();
+</script>
+</body>
+</html>
