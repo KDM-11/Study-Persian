@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Read Persian</title>
+    <link rel="icon" type="image/jpeg" href="images/PERSIAN.jpg">
+
+    <link rel="stylesheet" href="css-styling.css">
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1><b>!خوش آمدید</b></h1>
+        <a href="login.html">Login/Signup</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="alphabet.html">Alphabet</a>
+        <a href="read.html" class="active">Read</a>
+        <a href="scramble.html">Scramble</a>
+        <a href="colloquial.html">Colloquial</a>
+        <a href="why-persian.html">Why Persian?</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<div class="band"></div>
+
+<main>
+
+    <!-- SCREEN 1: intro + choose a level -->
+    <div id="intro">
+
+        <div class="big-word" lang="fa" dir="rtl">خواندن</div>
+        <p class="rom">khāndan · reading</p>
+
+        <h1>
+            <b style="color: black;">Read</b>
+            <b style="color: crimson;"><i>Persian.</i></b>
+        </h1>
+
+        <p>
+            Practice reading real Persian, starting with the level
+            that fits you. You can switch the pronunciation and the
+            English on or off whenever you need help.
+        </p>
+
+        <ol>
+            <li>Choose a level below.</li>
+            <li>Read the Persian text.</li>
+            <li>Turn on pronunciation or English to check yourself.</li>
+        </ol>
+
+        <h2>Choose your level</h2>
+
+        <div class="levels">
+            <button class="level-button" onclick="startLevel('easy')">
+                <b>Easy</b>
+                <span>One short sentence at a time</span>
+            </button>
+
+            <button class="level-button" onclick="startLevel('medium')">
+                <b>Medium</b>
+                <span>Short paragraphs</span>
+            </button>
+
+            <button class="level-button" onclick="startLevel('hard')">
+                <b>Hard</b>
+                <span>Longer stories</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- SCREEN 2: the reading practice (hidden until a level is chosen) -->
+    <div id="practice" hidden>
+
+        <button class="back-button" onclick="goBack()">&larr; Change level</button>
+
+        <h1 id="level-title"></h1>
+
+        <div class="controls">
+            <label><input type="checkbox" id="show-pron" onchange="showHide()"> Pronunciation</label>
+            <label><input type="checkbox" id="show-eng" onchange="showHide()"> English</label>
+        </div>
+
+        <div class="read-card" id="read-card">
+            <p class="persian" id="persian" lang="fa" dir="rtl"></p>
+            <p class="pron" id="pron"></p>
+            <p class="english" id="english"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prev" onclick="changeItem(-1)">&larr; Previous</button>
+            <span id="counter"></span>
+            <button id="next" onclick="changeItem(1)">Next &rarr;</button>
+        </div>
+
+    </div>
+
+</main>
+
+<hr>
+
+<footer>
+    Author: Keyan Moiny<br>
+    &copy; Copyright reserved<br>
+    <small>
+        <a href="mailto:keyan.moiny.654@mycsun.edu">
+            keyan.moiny.654@mycsun.edu
+        </a>
+    </small>
+</footer>
+
+<script src="read.js"></script>
+
+</body>
+</html>
