@@ -1,0 +1,640 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+/* Header */
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Home page header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* All other pages */
+.other-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 20px;
+    min-height: 40px;
+}
+
+
+
+
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #9b2226;
+}
+
+/* Welcome section */
+.welcome-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+nav a.active {
+    position: relative;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 3px;
+    background-color: #9b2226;
+}
+
+/* Text on the left */
+.welcome-text {
+    flex: 0 1 500px;
+    min-width: 0;
+}
+
+.welcome-text p {
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+/* Image next to the text */
+.welcome-image {
+    display: block;
+    width: 35%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* YAHHHHHHHhhhhhhhhhhh BOIIIIIIIIIIIIIIIIIIIII!!! height: auto;!!!!!!!!!! */ 
+
+.persiantext-image {
+    display: block;
+    width: 30%;
+    max-width: 305px;
+    aspect-ratio: 310 / 269;
+    height: auto;
+    object-fit: fill;
+    flex-shrink: 0;
+}
+
+
+
+/* Start reading button */
+.start-button {
+    font-size: 25px;
+    background-color: #9b2226;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #7f1d1d;
+}
+
+/* Explore images */
+.explore-images {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.explore-images img {
+    height: 200px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Explore table */
+table {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    padding: 12px 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    header > div {
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .welcome-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .welcome-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        flex-shrink: 1;
+    }
+
+    .explore-images img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    th {
+        padding: 8px;
+    }
+}
+
+/* Beaded banner: one tiny diamond picture, repeated sideways */
+.band {
+    height: 14px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M14 1 L19 7 L14 13 L9 7Z' fill='%231596a3'/%3E%3Cpath d='M0 7 L4 3 L4 11Z M28 7 L24 3 L24 11Z' fill='%23e9a526'/%3E%3C/svg%3E") repeat-x;
+}
+
+/* "At a glance" boxes */
+.facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+}
+
+.fact {
+    background-color: #0b5d6b;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+}
+
+.fact b {
+    display: block;
+    font-size: 32px;
+    color: #e9a526;
+}
+
+/* "What you'll find here" table */
+.find {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fffaf0;
+    border: 1px solid #d9c9a8;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.find td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #d9c9a8;
+    vertical-align: top;
+}
+
+.find tr:last-child td {
+    border-bottom: none;
+}
+
+.find tr:hover {
+    background-color: #e6f4f5;
+}
+
+.find a {
+    color: #1596a3;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.find td:nth-child(2) {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .find td {
+        display: block;
+        padding: 4px 14px;
+    }
+    .find tr {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #d9c9a8;
+    }
+    .find tr:last-child {
+        border-bottom: none;
+    }
+    .find td {
+        border-bottom: none;
+    }
+}
+
+/* ==========================================================
+   ==========================================================
+   ===   ALPHABET PAGE STYLES (alphabet.html) START HERE  ===
+   ==========================================================
+   ========================================================== */
+.letters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
+}
+
+.letter {
+    background-color: #fffaf0;
+    border: 1px solid #d9c9a8;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+}
+
+.letter:hover {
+    background-color: #e6f4f5;
+}
+
+.letter b {
+    display: block;
+    font-size: 48px;
+    color: #9b2226;
+    line-height: 1.2;
+}
+
+.letter span {
+    display: block;
+}
+
+.letter .name {
+    font-weight: bold;
+}
+
+.letter .sound {
+    color: #0b5d6b;
+}
+
+/* ==========================================================
+   ===            ALPHABET PAGE STYLES END                ===
+   ========================================================== */
+
+/* ==========================================================
+   ==========================================================
+   ===     READ PAGE STYLES (read.html) START HERE        ===
+   ==========================================================
+   ========================================================== */
+
+/* Intro screen */
+.big-word {
+    font-size: 64px;
+    color: #9b2226;
+    line-height: 1.2;
+}
+
+.rom {
+    font-style: italic;
+    color: #0b5d6b;
+    margin-top: 0;
+}
+
+#intro ol {
+    line-height: 1.8;
+}
+
+/* Level buttons */
+.levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.level-button {
+    background-color: #0b5d6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.level-button b {
+    display: block;
+    font-size: 28px;
+    color: #e9a526;
+}
+
+.level-button:hover {
+    background-color: #094a56;
+}
+
+/* Reading screen */
+.back-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #9b2226;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.read-card {
+    background-color: #fffaf0;
+    border: 1px solid #d9c9a8;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.persian {
+    font-size: 32px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.read-card.medium .persian {
+    font-size: 28px;
+}
+
+.read-card.hard .persian {
+    font-size: 24px;
+}
+
+.pron {
+    font-size: 18px;
+    font-style: italic;
+    color: #0b5d6b;
+    margin: 12px 0 0;
+}
+
+.english {
+    font-size: 18px;
+    margin: 12px 0 0;
+}
+
+/* Previous / Next */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.nav-buttons button {
+    font-size: 18px;
+    background-color: #9b2226;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.nav-buttons button:hover {
+    background-color: #7f1d1d;
+}
+
+.nav-buttons button:disabled {
+    background-color: #c9b9a0;
+    cursor: default;
+}
+
+/* ==========================================================
+   ===              READ PAGE STYLES END                  ===
+   ========================================================== */
+
+/* ==========================================================
+   ==========================================================
+   ===   SCRAMBLE PAGE STYLES (scramble.html) START HERE  ===
+   ==========================================================
+   ========================================================== */
+
+/* NOTE: the Scramble page also reuses these classes from the
+   READ section above: .big-word, .rom, .levels, .level-button,
+   .back-button and .read-card. Keep that section in the file. */
+
+.status {
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.prompt {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.box-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0b5d6b;
+    margin: 15px 0 5px;
+}
+
+/* The two boxes: "Your sentence" and "Word bank" */
+.word-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+    min-height: 64px;
+    padding: 10px;
+    border: 2px dashed #d9c9a8;
+    border-radius: 12px;
+}
+
+.bank-box {
+    background-color: #f5ecd7;
+}
+
+/* One word tile */
+.word {
+    font-size: 26px;
+    background-color: #ffffff;
+    border: 2px solid #0b5d6b;
+    border-radius: 10px;
+    padding: 4px 14px;
+    cursor: grab;
+    user-select: none;
+}
+
+.word:hover {
+    background-color: #e6f4f5;
+}
+
+/* Messages */
+.message {
+    font-weight: bold;
+    min-height: 24px;
+    margin: 15px 0 0;
+}
+
+.message.good {
+    color: #1b7a3a;
+}
+
+.message.bad {
+    color: #9b2226;
+}
+
+.hint-text {
+    font-style: italic;
+    color: #0b5d6b;
+    margin: 8px 0 0;
+}
+
+/* Check / Hint / Next buttons */
+.scramble-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.scramble-buttons button {
+    font-size: 18px;
+    background-color: #9b2226;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.scramble-buttons button:hover {
+    background-color: #7f1d1d;
+}
+
+.scramble-buttons button.teal {
+    background-color: #0b5d6b;
+}
+
+.scramble-buttons button.teal:hover {
+    background-color: #094a56;
+}
+
+/* ==========================================================
+   ===            SCRAMBLE PAGE STYLES END                ===
+   ========================================================== */
+
+/* ==========================================================
+   ==========================================================
+   ===  LOGIN + COLLOQUIAL STYLES (login.html, colloquial.html) START HERE  ===
+   ==========================================================
+   ========================================================== */
+
+/* NOTE: these pages also reuse .big-word, .rom, .read-card, .persian,
+   .pron, .english, .message, .scramble-buttons and .start-button
+   from the sections above. Keep those sections in the file. */
+
+/* Login box */
+.login-card {
+    max-width: 420px;
+}
+
+.login-card label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 2px solid #d9c9a8;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.login-card .newsletter {
+    font-weight: normal;
+}
+
+/* Paywall */
+#paywall {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.lock {
+    font-size: 64px;
+}
+
+/* Colloquial cards */
+.colloquial-card {
+    margin-bottom: 15px;
+}
+
+.colloquial-card .formal {
+    font-size: 20px;
+    color: #777777;
+    margin: 0 0 8px;
+}
+
+/* ==========================================================
+   ===        LOGIN + COLLOQUIAL STYLES END               ===
+   ========================================================== */

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colloquial Persian</title>
+    <link rel="icon" type="image/jpeg" href="images/PERSIAN.jpg">
+
+    <link rel="stylesheet" href="css-styling.css">
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1><b>!خوش آمدید</b></h1>
+        <a href="login.html" id="auth-link">Login/Signup</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="alphabet.html">Alphabet</a>
+        <a href="read.html">Read</a>
+        <a href="scramble.html">Scramble</a>
+        <a href="colloquial.html" class="active">Colloquial</a>
+        <a href="why-persian.html">Why Persian?</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<div class="band"></div>
+
+<main>
+
+    <!-- Shown for a moment while we check who you are -->
+    <p id="loading">Checking your access...</p>
+
+    <!-- PAYWALL: shown to logged out, pending and denied visitors -->
+    <div id="paywall" hidden>
+
+        <div class="lock">&#128274;</div>
+
+        <h1>
+            <b style="color: black;">Colloquial is a</b>
+            <b style="color: crimson;"><i>members feature.</i></b>
+        </h1>
+
+        <p id="paywall-text"></p>
+
+        <a href="login.html" id="paywall-button">
+            <button class="start-button">LOG IN / SIGN UP</button>
+        </a>
+
+    </div>
+
+    <!-- MEMBERS: shown only to approved visitors -->
+    <div id="members" hidden>
+
+        <div class="big-word" lang="fa" dir="rtl">محاوره‌ای</div>
+        <p class="rom">mohāvere-i · colloquial</p>
+
+        <h1>
+            <b style="color: black;">Spoken</b>
+            <b style="color: crimson;"><i>Persian.</i></b>
+        </h1>
+
+        <p>
+            This is how Persian sounds in everyday conversation, next to
+            the formal way it is written. (Placeholder content for now.)
+        </p>
+
+        <div id="cards"></div>
+
+    </div>
+
+</main>
+
+<hr>
+
+<footer>
+    Author: Keyan Moiny<br>
+    &copy; Copyright reserved<br>
+    <small>
+        <a href="mailto:keyan.moiny.654@mycsun.edu">
+            keyan.moiny.654@mycsun.edu
+        </a>
+    </small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="auth.js"></script>
+<script src="colloquial.js"></script>
+
+</body>
+</html>

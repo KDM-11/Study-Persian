@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login / Signup</title>
+    <link rel="icon" type="image/jpeg" href="images/PERSIAN.jpg">
+
+    <link rel="stylesheet" href="css-styling.css">
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1><b>!خوش آمدید</b></h1>
+        <a href="login.html" id="auth-link">Login/Signup</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="alphabet.html">Alphabet</a>
+        <a href="read.html">Read</a>
+        <a href="scramble.html">Scramble</a>
+        <a href="colloquial.html">Colloquial</a>
+        <a href="why-persian.html">Why Persian?</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<div class="band"></div>
+
+<main>
+
+    <div class="big-word" lang="fa" dir="rtl">ورود</div>
+    <p class="rom">vorud · entry</p>
+
+    <h1>
+        <b style="color: black;">Log in or</b>
+        <b style="color: crimson;"><i>request access.</i></b>
+    </h1>
+
+    <p>
+        Make a free account to get the newsletter and request access to
+        Colloquial mode. New accounts start as pending until they are
+        approved.
+    </p>
+
+    <div class="read-card login-card">
+
+        <label for="email">Email</label>
+        <input type="email" id="email">
+
+        <label for="password">Password (6+ characters)</label>
+        <input type="password" id="password">
+
+        <label class="newsletter">
+            <input type="checkbox" id="newsletter" checked>
+            Send me the newsletter
+        </label>
+
+        <p class="message" id="message"></p>
+
+        <div class="scramble-buttons">
+            <button onclick="logIn()">Log in</button>
+            <button class="teal" onclick="signUp()">Sign up</button>
+        </div>
+
+    </div>
+
+</main>
+
+<hr>
+
+<footer>
+    Author: Keyan Moiny<br>
+    &copy; Copyright reserved<br>
+    <small>
+        <a href="mailto:keyan.moiny.654@mycsun.edu">
+            keyan.moiny.654@mycsun.edu
+        </a>
+    </small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="auth.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>
