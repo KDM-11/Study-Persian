@@ -3,7 +3,7 @@
 //  Supabase > Project Settings > API
 // ============================================================
 
-var SUPABASE_URL = "https://fwpkjxqwgrbjmzftanla.supabase.co/rest/v1/";
+var SUPABASE_URL = "https://fwpkjxqwgrbjmzftanla.supabase.co";
 var SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cGtqeHF3Z3Jiam16ZnRhbmxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyODU5MDMsImV4cCI6MjEwODg2MTkwM30.TxN-LouZWr2vFM0pSDhKjOcdSkczYzm9mXqEer7WidE";
 
 
