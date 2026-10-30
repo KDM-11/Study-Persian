@@ -577,3 +577,64 @@ footer {
 /* ==========================================================
    ===            SCRAMBLE PAGE STYLES END                ===
    ========================================================== */
+
+/* ==========================================================
+   ==========================================================
+   ===  LOGIN + COLLOQUIAL STYLES (login.html, colloquial.html) START HERE  ===
+   ==========================================================
+   ========================================================== */
+
+/* NOTE: these pages also reuse .big-word, .rom, .read-card, .persian,
+   .pron, .english, .message, .scramble-buttons and .start-button
+   from the sections above. Keep those sections in the file. */
+
+/* Login box */
+.login-card {
+    max-width: 420px;
+}
+
+.login-card label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 2px solid #d9c9a8;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.login-card .newsletter {
+    font-weight: normal;
+}
+
+/* Paywall */
+#paywall {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.lock {
+    font-size: 64px;
+}
+
+/* Colloquial cards */
+.colloquial-card {
+    margin-bottom: 15px;
+}
+
+.colloquial-card .formal {
+    font-size: 20px;
+    color: #777777;
+    margin: 0 0 8px;
+}
+
+/* ==========================================================
+   ===        LOGIN + COLLOQUIAL STYLES END               ===
+   ========================================================== */
