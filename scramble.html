@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scramble Persian</title>
+    <link rel="icon" type="image/jpeg" href="images/PERSIAN.jpg">
+
+    <link rel="stylesheet" href="css-styling.css">
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1><b>!خوش آمدید</b></h1>
+        <a href="login.html">Login/Signup</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="alphabet.html">Alphabet</a>
+        <a href="read.html">Read</a>
+        <a href="scramble.html" class="active">Scramble</a>
+        <a href="colloquial.html">Colloquial</a>
+        <a href="why-persian.html">Why Persian?</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<div class="band"></div>
+
+<main>
+
+    <!-- SCREEN 1: intro + choose a level -->
+    <div id="intro">
+
+        <div class="big-word" lang="fa" dir="rtl">ترتیب</div>
+        <p class="rom">tartib · order</p>
+
+        <h1>
+            <b style="color: black;">Scramble</b>
+            <b style="color: crimson;"><i>the sentence.</i></b>
+        </h1>
+
+        <p>
+            A word-order puzzle. You see an English sentence and a
+            jumble of Persian words, then rebuild the sentence.
+            Persian puts the verb at the end, so this trains how
+            sentences are put together.
+        </p>
+
+        <ol>
+            <li>Choose a level below.</li>
+            <li>Read the English sentence.</li>
+            <li>Tap the Persian words in order, or drag them to rearrange.</li>
+            <li>Press Check, or Hint if you are stuck.</li>
+        </ol>
+
+        <h2>Choose your level</h2>
+
+        <div class="levels">
+            <button class="level-button" onclick="startLevel('easy')">
+                <b>Easy</b>
+                <span>Short, simple sentences</span>
+            </button>
+
+            <button class="level-button" onclick="startLevel('medium')">
+                <b>Medium</b>
+                <span>Everyday, useful sentences</span>
+            </button>
+
+            <button class="level-button" onclick="startLevel('hard')">
+                <b>Hard</b>
+                <span>More nouns and verbs to place</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- SCREEN 2: the puzzle (hidden until a level is chosen) -->
+    <div id="practice" hidden>
+
+        <button class="back-button" onclick="goBack()">&larr; Change level</button>
+
+        <h1 id="level-title"></h1>
+
+        <p class="status" id="status"></p>
+
+        <div class="read-card">
+
+            <p class="prompt" id="prompt"></p>
+
+            <p class="box-label">Your sentence</p>
+            <div class="word-box" id="answer" dir="rtl" lang="fa"></div>
+
+            <p class="box-label">Word bank</p>
+            <div class="word-box bank-box" id="bank" dir="rtl" lang="fa"></div>
+
+            <p class="message" id="message"></p>
+            <p class="hint-text" id="hint" hidden></p>
+
+            <div class="scramble-buttons">
+                <button onclick="checkAnswer()">Check</button>
+                <button onclick="showHint()">Hint</button>
+                <button class="teal" onclick="nextSentence()">Next</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<hr>
+
+<footer>
+    Author: Keyan Moiny<br>
+    &copy; Copyright reserved<br>
+    <small>
+        <a href="mailto:keyan.moiny.654@mycsun.edu">
+            keyan.moiny.654@mycsun.edu
+        </a>
+    </small>
+</footer>
+
+<script src="scramble.js"></script>
+
+</body>
+</html>
