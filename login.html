@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login / Signup</title>
+    <title>Log In</title>
     <link rel="icon" type="image/jpeg" href="images/PERSIAN.jpg">
 
     <link rel="stylesheet" href="css-styling.css">
@@ -41,35 +41,25 @@
     <p class="rom">vorud · entry</p>
 
     <h1>
-        <b style="color: black;">Log in or</b>
-        <b style="color: crimson;"><i>request access.</i></b>
+        <b style="color: black;">Log</b>
+        <b style="color: crimson;"><i>in.</i></b>
     </h1>
-
-    <p>
-        Make a free account to get the newsletter and request access to
-        Colloquial mode. New accounts start as pending until they are
-        approved.
-    </p>
 
     <div class="read-card login-card">
 
         <label for="email">Email</label>
         <input type="email" id="email">
 
-        <label for="password">Password (6+ characters)</label>
+        <label for="password">Password</label>
         <input type="password" id="password">
-
-        <label class="newsletter">
-            <input type="checkbox" id="newsletter" checked>
-            Send me the newsletter
-        </label>
 
         <p class="message" id="message"></p>
 
         <div class="scramble-buttons">
             <button onclick="logIn()">Log in</button>
-            <button class="teal" onclick="signUp()">Sign up</button>
         </div>
+
+        <p class="switch-text">No account yet? <a href="signup.html">Sign up</a></p>
 
     </div>
 

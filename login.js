@@ -11,7 +11,7 @@ function showMessage(text, kind) {
 
 // Log in button
 async function logIn() {
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("email").value.trim();
     var password = document.getElementById("password").value;
 
     if (email == "" || password == "") {
@@ -30,33 +30,4 @@ async function logIn() {
     }
 
     window.location.href = "colloquial.html";
-}
-
-// Sign up button: makes the account (it starts as "pending")
-async function signUp() {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var wantsNewsletter = document.getElementById("newsletter").checked;
-
-    if (email == "" || password == "") {
-        showMessage("Enter an email and a password.", "bad");
-        return;
-    }
-
-    var result = await db.auth.signUp({
-        email: email,
-        password: password,
-        options: { data: { newsletter: wantsNewsletter } }
-    });
-
-    if (result.error) {
-        showMessage(result.error.message, "bad");
-        return;
-    }
-
-    if (result.data.session) {
-        showMessage("Account created! Your access request is pending approval.", "good");
-    } else {
-        showMessage("Account created! Check your email to confirm it, then log in.", "good");
-    }
 }
