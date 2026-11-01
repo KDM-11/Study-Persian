@@ -599,6 +599,7 @@ footer {
     margin-top: 12px;
 }
 
+.login-card input[type="text"],
 .login-card input[type="email"],
 .login-card input[type="password"] {
     width: 100%;
@@ -612,6 +613,21 @@ footer {
 
 .login-card .newsletter {
     font-weight: normal;
+}
+
+.field-hint {
+    font-size: 14px;
+    color: #0b5d6b;
+    margin: 4px 0 0;
+}
+
+.switch-text {
+    margin: 15px 0 0;
+}
+
+.switch-text a {
+    color: #9b2226;
+    font-weight: bold;
 }
 
 /* Paywall */
