@@ -649,6 +649,16 @@ footer {
     margin: 0 0 8px;
 }
 
+/* hyperlink for easter egg and formatting */
+.forgot-password {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    font-size: inherit;
+}
+
 /* ==========================================================
    ===        LOGIN + COLLOQUIAL STYLES END               ===
    ========================================================== */
