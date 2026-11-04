@@ -1,3 +1,9 @@
+/* ==========================================================
+   ==========================================================
+   ===   HOME PAGE (index.html) START HERE  ===
+   ==========================================================
+   ========================================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -39,7 +45,7 @@ header > div {
 
 
 
-
+/* NAVIGATION BAR CONFIGURATION */
 nav {
     display: flex;
     justify-content: flex-start;
@@ -82,6 +88,8 @@ nav a.active::after {
     height: 3px;
     background-color: #9b2226;
 }
+
+/* WELCOME MESSAGES AND INCONS */
 
 /* Text on the left */
 .welcome-text {
@@ -133,7 +141,7 @@ nav a.active::after {
     background-color: #7f1d1d;
 }
 
-/* Explore images */
+/* Explore images and hyperlinks */
 .explore-images {
     display: flex;
     align-items: flex-start;
@@ -163,7 +171,7 @@ footer {
     margin-top: 20px;
 }
 
-/* Mobile screens */
+/* Mobile screens formating */
 @media (max-width: 600px) {
     header > div {
         align-items: flex-start;
@@ -227,7 +235,7 @@ footer {
     color: #e9a526;
 }
 
-/* "What you'll find here" table */
+/* "What you'll find here" table and description */
 .find {
     width: 100%;
     border-collapse: collapse;
@@ -283,7 +291,7 @@ footer {
 
 /* ==========================================================
    ==========================================================
-   ===   ALPHABET PAGE STYLES (alphabet.html) START HERE  ===
+   ===   ALPHABET PAGE (alphabet.html) START HERE  ===
    ==========================================================
    ========================================================== */
 .letters {
@@ -323,13 +331,10 @@ footer {
     color: #0b5d6b;
 }
 
-/* ==========================================================
-   ===            ALPHABET PAGE STYLES END                ===
-   ========================================================== */
 
 /* ==========================================================
    ==========================================================
-   ===     READ PAGE STYLES (read.html) START HERE        ===
+   ===     READ PAGE (read.html) START HERE        ===
    ==========================================================
    ========================================================== */
 
@@ -460,13 +465,10 @@ footer {
     cursor: default;
 }
 
-/* ==========================================================
-   ===              READ PAGE STYLES END                  ===
-   ========================================================== */
 
 /* ==========================================================
    ==========================================================
-   ===   SCRAMBLE PAGE STYLES (scramble.html) START HERE  ===
+   ===   SCRAMBLE PAGE  (scramble.html) START HERE  ===
    ==========================================================
    ========================================================== */
 
@@ -575,12 +577,8 @@ footer {
 }
 
 /* ==========================================================
-   ===            SCRAMBLE PAGE STYLES END                ===
-   ========================================================== */
-
-/* ==========================================================
    ==========================================================
-   ===  LOGIN + COLLOQUIAL STYLES (login.html, colloquial.html) START HERE  ===
+   ===  LOGIN + COLLOQUIAL (login.html, colloquial.html) START HERE  ===
    ==========================================================
    ========================================================== */
 
