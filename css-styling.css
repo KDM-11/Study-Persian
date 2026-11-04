@@ -200,7 +200,7 @@ footer {
     }
 }
 
-/* Beaded banner: one tiny diamond picture, repeated sideways */
+/* CSS STYLING EFFECT FOR BEADED BANNER*/
 .band {
     height: 14px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M14 1 L19 7 L14 13 L9 7Z' fill='%231596a3'/%3E%3Cpath d='M0 7 L4 3 L4 11Z M28 7 L24 3 L24 11Z' fill='%23e9a526'/%3E%3C/svg%3E") repeat-x;
