@@ -1,6 +1,3 @@
-// ============================================================
-//  CODE  (you shouldn't need to change anything in this file)
-// ============================================================
 
 // Shows a green (good) or red (bad) message under the boxes
 function showMessage(text, kind) {
