@@ -56,8 +56,8 @@ function makeCard(row) {
     var card = document.createElement("div");
     card.className = "read-card colloquial-card";
 
-    card.appendChild(makeLine("formal", row.word, true));
-    card.appendChild(makeLine("persian", row.colloquial, true));
+    card.appendChild(makeLine("word", row.word, true));
+    card.appendChild(makeLine("colloquial", row.colloquial, true));
     card.appendChild(makeLine("pron", row.pron, false));
     card.appendChild(makeLine("english", row.english, false));
 
